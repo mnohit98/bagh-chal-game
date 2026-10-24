@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- The YouTube Playables SDK: the first script, loaded before any game code, no defer/async. -->
+    <script src="https://www.youtube.com/game_api/v1"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <title>Bagh-Chal: Tigers &amp; Goats</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #14261a;
+        overflow: hidden;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-content: center;
+        gap: 14px;
+        text-align: center;
+        color: #fff4dc;
+        font: 600 16px 'Trebuchet MS', system-ui, sans-serif;
+        background: radial-gradient(ellipse at 50% 55%, #3e6a34, #24402a 55%, #14261a);
+        z-index: 50;
+      }
+      #boot h1 {
+        margin: 0;
+        font: 900 clamp(34px, 9vmin, 64px) / 1 'Trebuchet MS', system-ui, sans-serif;
+        color: #ffe08a;
+        text-shadow: 0 3px 0 #3f2410, 0 6px 16px rgba(0, 0, 0, 0.6);
+      }
+      #boot p {
+        margin: 0;
+      }
+      #boot .bar {
+        width: min(240px, 60vw);
+        height: 8px;
+        margin: 0 auto;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+      }
+      #boot .bar i {
+        display: block;
+        width: 40%;
+        height: 100%;
+        border-radius: 4px;
+        background: #f2b632;
+        animation: load 1.1s ease-in-out infinite alternate;
+      }
+      @keyframes load {
+        from {
+          transform: translateX(-20%);
+        }
+        to {
+          transform: translateX(170%);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/game-d7c9a04c.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/style-8da8b39c.css">
+  </head>
+  <body>
+    <div id="boot" role="status" aria-live="polite">
+      <h1>Bagh-Chal</h1>
+      <div class="bar" aria-hidden="true"><i></i></div>
+      <p>Loading the clearing…</p>
+    </div>
+    <div id="app"></div>
+  </body>
+</html>
